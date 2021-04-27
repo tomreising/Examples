@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: "Lato", sans-serif;}
+
+/* Style the tab */
+.tab {
+  float: left;
+  background-color: #f1f1f1;
+  width: 20%;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 80%;
+  border-left: none;
+  height: 900px;
+}
+</style>
+</head>
+<body>
+
+<h2>Welcome</h2>
+<p>Please select a topic from the navigation tabs:</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'Hurricane')">Hurricane R Report</button>
+  <button class="tablinks" onclick="openCity(event, 'FullRCode')">Full R Hurricane Code</button>
+  <button class="tablinks" onclick="openCity(event, 'Other2')">Other2</button>
+  <button class="tablinks" onclick="openCity(event, 'Other3')">Other3</button>
+</div>
+
+
+<div id="Home" class="tabcontent">
+  <h3>Welcome</h3>
+  <p>   Welcome to my github site. This site is still being developed. Once it is fully built I hope to have numerous reports <br>
+  	accompanied by the R or Python code used to create them. For now I only have one report which I used <br>
+	R to create. This report seems relatively basic at first but the R code allows a user to select an Kml file of a hurricane's <br> 
+	predicted path and automatically generates the report of counties and population sizes which are in the hurricane's path. <br>
+	This was one of my favorite projects I've worked on and hope you enjoy.
+</p> 
+</div>
+
+<div id="Hurricane" class="tabcontent">
+  <iframe src="https://tomreising.github.io/Examples/FinalDraft.html" height="100%" width="100%" frameBorder="0" align="right">
+  </iframe>
+</div>
+
+<div id="FullRCode" class="tabcontent">
+  <iframe src="https://tomreising.github.io/Examples/FinalDraft2.html" height="100%" width="100%" frameBorder="0" align="right">
+  </iframe>
+</div>
+
+
+<div id="Other2" class="tabcontent">
+  <h3>Testing</h3>
+  <p>working tab</p>
+</div>
+
+
+<div id="Other3" class="tabcontent">
+  <h3>Testing</h3>
+  <p>working tab</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html>
